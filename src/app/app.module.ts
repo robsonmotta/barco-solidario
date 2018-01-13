@@ -6,15 +6,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { ContactProvider } from '../providers/contact/contact';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
   ],
   imports: [
     BrowserModule,
@@ -27,12 +26,12 @@ import { ContactProvider } from '../providers/contact/contact';
       storageBucket: "barco-solidario.appspot.com",
       messagingSenderId: "813814174017"
     }),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
   ],
   providers: [
     StatusBar,
