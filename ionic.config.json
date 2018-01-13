@@ -1,0 +1,8 @@
+{
+  "name": "barco-solidario",
+  "app_id": "417f5ec7",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
