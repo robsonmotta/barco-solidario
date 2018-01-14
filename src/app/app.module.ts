@@ -10,6 +10,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
 import { ContactProvider } from '../providers/contact/contact';
+import { PatientProvider } from '../providers/patient/patient';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { ContactProvider } from '../providers/contact/contact';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ContactProvider
+    AngularFireAuthModule,
+    ContactProvider,
+    PatientProvider
   ]
 })
 export class AppModule {}
