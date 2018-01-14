@@ -58,8 +58,17 @@
 
     <ion-item>
       <ion-label stacked>Sexo</ion-label>
-      <ion-input type="text" formControlName="gender"></ion-input>
     </ion-item>
+    <ion-list radio-group formControlName="gender">
+      <ion-item>
+        <ion-label>Feminino</ion-label>
+        <ion-radio value="feminino"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio value="masculino"></ion-radio>
+      </ion-item>
+    </ion-list>
 
     <ion-item>
       <ion-label stacked>Cor</ion-label>
@@ -102,47 +111,47 @@
 
     <ion-item>
       <ion-label stacked>Verminose</ion-label>
-      <ion-input type="text" formControlName="personal_worm_infestation"></ion-input>
+      <ion-checkbox formControlName="personal_worm_infestation"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>DM</ion-label>
-      <ion-input type="text" formControlName="personal_dm"></ion-input>
+      <ion-checkbox formControlName="personal_dm"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>HAS</ion-label>
-      <ion-input type="text" formControlName="personal_sah"></ion-input>
+      <ion-checkbox formControlName="personal_sah"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Câncer</ion-label>
-      <ion-input type="text" formControlName="personal_cancer"></ion-input>
+      <ion-checkbox formControlName="personal_cancer"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>TB</ion-label>
-      <ion-input type="text" formControlName="personal_tuberculosis"></ion-input>
+      <ion-checkbox formControlName="personal_tuberculosis"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>AVC</ion-label>
-      <ion-input type="text" formControlName="personal_stroke"></ion-input>
+      <ion-checkbox formControlName="personal_stroke"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Álcool</ion-label>
-      <ion-input type="text" formControlName="personal_alcohol"></ion-input>
+      <ion-checkbox formControlName="personal_alcohol"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Cigarro</ion-label>
-      <ion-input type="text" formControlName="personal_cigarette"></ion-input>
+      <ion-checkbox formControlName="personal_cigarette"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Drogas</ion-label>
-      <ion-input type="text" formControlName="personal_drug"></ion-input>
+      <ion-checkbox formControlName="personal_drug"></ion-checkbox>
     </ion-item>
 
     <ion-item>
@@ -166,32 +175,32 @@
 
     <ion-item>
       <ion-label stacked>Verminose</ion-label>
-      <ion-input type="text" formControlName="family_worm_infestation"></ion-input>
+      <ion-checkbox formControlName="family_worm_infestation"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>DM</ion-label>
-      <ion-input type="text" formControlName="family_dm"></ion-input>
+      <ion-checkbox formControlName="family_dm"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>HAS</ion-label>
-      <ion-input type="text" formControlName="family_sah"></ion-input>
+      <ion-checkbox formControlName="family_sah"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Câncer</ion-label>
-      <ion-input type="text" formControlName="family_cancer"></ion-input>
+      <ion-checkbox formControlName="family_cancer"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>TB</ion-label>
-      <ion-input type="text" formControlName="family_tuberculosis"></ion-input>
+      <ion-checkbox formControlName="family_tuberculosis"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>AVC</ion-label>
-      <ion-input type="text" formControlName="family_stroke"></ion-input>
+      <ion-checkbox formControlName="family_stroke"></ion-checkbox>
     </ion-item>
 
     <ion-item>
@@ -213,102 +222,107 @@
 
     <ion-item>
       <ion-label stacked>BEG</ion-label>
-      <ion-input type="text" formControlName="exam_general_beg"></ion-input>
+      <ion-checkbox formControlName="exam_general_beg"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>REG</ion-label>
-      <ion-input type="text" formControlName="exam_general_reg"></ion-input>
+      <ion-checkbox formControlName="exam_general_reg"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>MEG</ion-label>
-      <ion-input type="text" formControlName="exam_general_meg"></ion-input>
+      <ion-checkbox formControlName="exam_general_meg"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Corado</ion-label>
-      <ion-input type="text" formControlName="exam_general_corado"></ion-input>
+      <ion-checkbox formControlName="exam_general_corado"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Descorado</ion-label>
-      <ion-input type="text" formControlName="exam_general_descorado"></ion-input>
+      <ion-checkbox formControlName="exam_general_descorado"></ion-checkbox>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Descorado_qtd</ion-label>
-      <ion-input type="text" formControlName="exam_general_descorado_qtd"></ion-input>
+      <ion-label stacked>Descorado informação (/+4)</ion-label>
+      <ion-input formControlName="exam_general_descorado_qtd"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Hidratado</ion-label>
-      <ion-input type="text" formControlName="exam_general_hidratado"></ion-input>
+      <ion-checkbox formControlName="exam_general_hidratado"></ion-checkbox>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Hidratado_qtd</ion-label>
-      <ion-input type="text" formControlName="exam_general_hidratado_qtd"></ion-input>
+      <ion-label stacked>Desidratado</ion-label>
+      <ion-checkbox formControlName="exam_general_desidratado"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Desidratado informação (/+4)</ion-label>
+      <ion-input formControlName="exam_general_desidratado_qtd"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Eupneico</ion-label>
-      <ion-input type="text" formControlName="exam_general_eupneico"></ion-input>
+      <ion-checkbox formControlName="exam_general_eupneico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Dispneico</ion-label>
-      <ion-input type="text" formControlName="exam_general_dispneico"></ion-input>
+      <ion-checkbox formControlName="exam_general_dispneico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Taquipneico</ion-label>
-      <ion-input type="text" formControlName="exam_general_taquipneico"></ion-input>
+      <ion-checkbox formControlName="exam_general_taquipneico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Acianótico</ion-label>
-      <ion-input type="text" formControlName="exam_general_acianotico"></ion-input>
+      <ion-checkbox formControlName="exam_general_acianotico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Cianose periférica</ion-label>
-      <ion-input type="text" formControlName="exam_general_cianose_periferica"></ion-input>
+      <ion-checkbox formControlName="exam_general_cianose_periferica"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Cianose central</ion-label>
-      <ion-input type="text" formControlName="exam_general_cianose_central"></ion-input>
+      <ion-checkbox formControlName="exam_general_cianose_central"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Anictérico</ion-label>
-      <ion-input type="text" formControlName="exam_general_anicterico"></ion-input>
+      <ion-checkbox formControlName="exam_general_anicterico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Ictérico</ion-label>
-      <ion-input type="text" formControlName="exam_general_icterico"></ion-input>
+      <ion-checkbox formControlName="exam_general_icterico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Ictérico grau</ion-label>
-      <ion-input type="text" formControlName="exam_general_icterico_grau"></ion-input>
+      <ion-label stacked>Ictérico informação</ion-label>
+      <ion-input formControlName="exam_general_icterico_grau"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Afebril</ion-label>
-      <ion-input type="text" formControlName="exam_general_afebril"></ion-input>
+      <ion-checkbox formControlName="exam_general_afebril"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Febril</ion-label>
-      <ion-input type="text" formControlName="exam_general_febril"></ion-input>
+      <ion-checkbox formControlName="exam_general_febril"></ion-checkbox>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Febril qtd</ion-label>
-      <ion-input type="text" formControlName="exam_general_febril_qtd"></ion-input>
+      <ion-label stacked>Febril informação</ion-label>
+      <ion-input formControlName="exam_general_febril_qtd"></ion-input>
     </ion-item>
 
     <br><br><br><br>
@@ -326,12 +340,12 @@
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>FC</ion-label>
+      <ion-label stacked>FC (bpm)</ion-label>
       <ion-input type="text" formControlName="exam_specific_fc"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>PA</ion-label>
+      <ion-label stacked>PA ( _ x _ mmHg)</ion-label>
       <ion-input type="text" formControlName="exam_specific_pa"></ion-input>
     </ion-item>
 
@@ -341,7 +355,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>FR</ion-label>
+      <ion-label stacked>FR (bpm)</ion-label>
       <ion-input type="text" formControlName="exam_specific_fr"></ion-input>
     </ion-item>
 
