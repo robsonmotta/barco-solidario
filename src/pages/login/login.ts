@@ -48,9 +48,11 @@ export class LoginPage {
         if (error.code == "auth/wrong-password") {
           error_msg = "Senha inválida"
         } else if (error.code == "auth/invalid-email") {
-          error_msg = "Usuário não cadastrado"
+          error_msg = "E-mail inválido"
         } else if (error.code == "auth/too-many-requests") {
-          error_msg = "Você foi bloqueado por ter feito muitas tentativas. Aguarde alguns segundos."
+          error_msg = "Você foi bloqueado por ter feito muitas tentativas. Aguarde alguns segundos"
+        } else if (error.code == "auth/user-not-found") {
+          error_msg = "Usuário não cadastrado"
         }
         this.toast.create({
           message: error_msg,
