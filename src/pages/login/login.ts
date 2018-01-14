@@ -24,7 +24,7 @@ export class LoginPage {
 
   async login(user: User) {
     try {
-      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
+      this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
       .then((user) => {
         if(user.emailVerified) {
           this.navCtrl.push('HomePage');
@@ -44,13 +44,25 @@ export class LoginPage {
           });
         };
       }, error => {
+        var error_msg = error.message;
+        if (error.code == "auth/wrong-password") {
+          error_msg = "Senha inválida"
+        } else if (error.code == "auth/invalid-email") {
+          error_msg = "Usuário não cadastrado"
+        } else if (error.code == "auth/too-many-requests") {
+          error_msg = "Você foi bloqueado por ter feito muitas tentativas. Aguarde alguns segundos."
+        }
         this.toast.create({
-          message: 'Usuário ainda não cadastrado.',
+          message: error_msg,
           duration: 3000
         }).present();
+        console.log(error);
       });
     } catch (e) {
-      console.log("Ocorreu um erro ao tentar fazer login.");
+      this.toast.create({
+        message: 'Todos os campos precisam ser preenchidos.',
+        duration: 3000
+      }).present();
     }
   }
 

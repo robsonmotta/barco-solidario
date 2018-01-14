@@ -24,7 +24,7 @@ export class RegisterPage {
 
   async register(user: User) {
     try {
-        const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
+        this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
         .then((res) => {
           res.sendEmailVerification();
           this.toast.create({
@@ -32,8 +32,16 @@ export class RegisterPage {
             duration: 3000
           }).present();
         }, error => {
+          var error_msg = error.message;
+          if (error.code == "auth/weak-password") {
+            error_msg = "Senha precisa de ao menos 6 caracteres."
+          } else if (error.code == "auth/invalid-email") {
+            error_msg = "E-mail inválido"
+          } else if (error.code == "auth/email-already-in-use") {
+            error_msg = "E-mail já cadastrado."
+          }
           this.toast.create({
-            message: 'Todos os campos devem ser preenchidos corretamente. ' + error.message,
+            message: error_msg,
             duration: 3000
           }).present();
           console.log(error);
