@@ -27,7 +27,7 @@ export class LoginPage {
       this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
       .then((user) => {
         if(user.emailVerified) {
-          this.navCtrl.push('HomePage');
+          this.navCtrl.setRoot('HomePage');
         } else {
           user.sendEmailVerification()
           .then((res) => {

@@ -1,33 +1,28 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Atendimentos
+      Barco Solidário
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-list>
-    <ion-item-sliding *ngFor="let patient of patients | async">
-      <ion-item>
-        <h1>{{ patient.name }}</h1>
-        <p>{{ patient.date }} - {{ patient.responsible }} ({{ patient.responsible_team }})</p>
-      </ion-item>
-      <ion-item-options side="left">
-        <button ion-button color="secondary" (click)="editPatient(patient)">
-          <ion-icon name="create"></ion-icon>
-        </button>
-        <button ion-button color="danger" (click)="removePatient(patient.key)">
-          <ion-icon name="trash"></ion-icon>
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+  Projeto que leva atendimento medico e odontológico, educação e carinho para comunidades indígenas e ribeirinhas da Amazônia através de um barco hospital.
 
-  <ion-fab bottom right>
-    <button ion-fab color="primary" (click)="newPatient()">
-      <ion-icon name="add"></ion-icon>
-    </button>
-  </ion-fab>
+  <br><br>
+  <button ion-button round (click)="patients()">Atendimentos</button>
+  <br><br>
+  <button ion-button round color="light">Barcos cadastrados</button>
+
+  <br><br><br><br>
+  Contatos:
+  <br><br>
+  https://www.facebook.com/barcosolidario
+  <br><br>
+  https://www.catarse.me/missaoamazonia
+  <br><br>
+  barcohospital2017@hotmail.com
+  <br><br>
+
 </ion-content>
