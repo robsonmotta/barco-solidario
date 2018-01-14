@@ -8,31 +8,31 @@
   <form [formGroup]="form">
 
     <ion-item>
-      <ion-label stacked>Data</ion-label>
-      <ion-input type="date" formControlName="date"></ion-input>
+      <ion-label stacked>Data*</ion-label>
+      <ion-input type="date" formControlName="data"></ion-input>
     </ion-item>
-    <ion-item *ngIf="!form.controls.date.valid && (form.controls.date.dirty || form.controls.date.touched)" color="danger">
-      <div [hidden]="!form.controls.date.errors.required">
+    <ion-item *ngIf="!form.controls.data.valid && (form.controls.data.dirty || form.controls.data.touched)" color="danger">
+      <div [hidden]="!form.controls.data.errors.required">
         O campo é obrigatório
       </div>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Responsável</ion-label>
-      <ion-input type="text" formControlName="responsible"></ion-input>
+      <ion-label stacked>Responsável*</ion-label>
+      <ion-input type="text" formControlName="responsavel"></ion-input>
     </ion-item>
-    <ion-item *ngIf="!form.controls.responsible.valid && (form.controls.responsible.dirty || form.controls.responsible.touched)" color="danger">
-      <div [hidden]="!form.controls.responsible.errors.required">
+    <ion-item *ngIf="!form.controls.responsavel.valid && (form.controls.responsavel.dirty || form.controls.responsavel.touched)" color="danger">
+      <div [hidden]="!form.controls.responsavel.errors.required">
         O campo é obrigatório
       </div>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Equipe</ion-label>
-      <ion-input type="text" formControlName="responsible_team"></ion-input>
+      <ion-label stacked>Equipe*</ion-label>
+      <ion-input type="text" formControlName="equipe"></ion-input>
     </ion-item>
-    <ion-item *ngIf="!form.controls.responsible_team.valid && (form.controls.responsible_team.dirty || form.controls.responsible_team.touched)" color="danger">
-      <div [hidden]="!form.controls.responsible_team.errors.required">
+    <ion-item *ngIf="!form.controls.equipe.valid && (form.controls.equipe.dirty || form.controls.equipe.touched)" color="danger">
+      <div [hidden]="!form.controls.equipe.errors.required">
         O campo é obrigatório
       </div>
     </ion-item>
@@ -42,24 +42,24 @@
     <br><br>
 
     <ion-item>
-      <ion-label stacked>Nome</ion-label>
-      <ion-input type="text" formControlName="name"></ion-input>
+      <ion-label stacked>Nome*</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
     </ion-item>
-    <ion-item *ngIf="!form.controls.name.valid && (form.controls.name.dirty || form.controls.name.touched)" color="danger">
-      <div [hidden]="!form.controls.name.errors.required">
+    <ion-item *ngIf="!form.controls.nome.valid && (form.controls.nome.dirty || form.controls.nome.touched)" color="danger">
+      <div [hidden]="!form.controls.nome.errors.required">
         O campo é obrigatório
       </div>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Idade</ion-label>
-      <ion-input type="text" formControlName="age"></ion-input>
+      <ion-input type="text" formControlName="idade"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Sexo</ion-label>
     </ion-item>
-    <ion-list radio-group formControlName="gender">
+    <ion-list radio-group formControlName="genero">
       <ion-item>
         <ion-label>Feminino</ion-label>
         <ion-radio value="feminino"></ion-radio>
@@ -72,28 +72,28 @@
 
     <ion-item>
       <ion-label stacked>Cor</ion-label>
-      <ion-input type="text" formControlName="skin_color"></ion-input>
+      <ion-input type="text" formControlName="cor"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Profissão</ion-label>
-      <ion-input type="text" formControlName="occupation"></ion-input>
+      <ion-input type="text" formControlName="profissao"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Natural de</ion-label>
-      <ion-input type="text" formControlName="born_at"></ion-input>
+      <ion-input type="text" formControlName="natural_de"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Procedente de</ion-label>
-      <ion-input type="text" formControlName="came_from"></ion-input>
+      <ion-input type="text" formControlName="procedente_de"></ion-input>
     </ion-item>
 
     <br><br><br><br>
     <ion-title>Queixa e duração</ion-title>
     <ion-item>
-      <ion-input type="text" formControlName="complaint"></ion-input>
+      <ion-input type="text" formControlName="queixa"></ion-input>
     </ion-item>
 
     <br><br><br><br>
@@ -111,62 +111,62 @@
 
     <ion-item>
       <ion-label stacked>Verminose</ion-label>
-      <ion-checkbox formControlName="personal_worm_infestation"></ion-checkbox>
+      <ion-checkbox formControlName="pessoal_verminose"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>DM</ion-label>
-      <ion-checkbox formControlName="personal_dm"></ion-checkbox>
+      <ion-checkbox formControlName="pessoal_dm"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>HAS</ion-label>
-      <ion-checkbox formControlName="personal_sah"></ion-checkbox>
+      <ion-checkbox formControlName="pessoal_has"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Câncer</ion-label>
-      <ion-checkbox formControlName="personal_cancer"></ion-checkbox>
+      <ion-checkbox formControlName="pessoal_cancer"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>TB</ion-label>
-      <ion-checkbox formControlName="personal_tuberculosis"></ion-checkbox>
+      <ion-checkbox formControlName="pessoal_tb"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>AVC</ion-label>
-      <ion-checkbox formControlName="personal_stroke"></ion-checkbox>
+      <ion-checkbox formControlName="pessoal_avc"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Álcool</ion-label>
-      <ion-checkbox formControlName="personal_alcohol"></ion-checkbox>
+      <ion-checkbox formControlName="pessoal_alcool"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Cigarro</ion-label>
-      <ion-checkbox formControlName="personal_cigarette"></ion-checkbox>
+      <ion-checkbox formControlName="pessoal_cigarro"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Drogas</ion-label>
-      <ion-checkbox formControlName="personal_drug"></ion-checkbox>
+      <ion-checkbox formControlName="pessoal_drogas"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Alergias</ion-label>
-      <ion-input type="text" formControlName="personal_allergy"></ion-input>
+      <ion-input type="text" formControlName="pessoal_alergias"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Outros</ion-label>
-      <ion-input type="text" formControlName="personal_other"></ion-input>
+      <ion-input type="text" formControlName="pessoal_outros"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Cirurgias prévias</ion-label>
-      <ion-input type="text" formControlName="personal_previous_surgery"></ion-input>
+      <ion-input type="text" formControlName="pessoal_cirurgias_previas"></ion-input>
     </ion-item>
 
     <br><br><br><br>
@@ -175,42 +175,42 @@
 
     <ion-item>
       <ion-label stacked>Verminose</ion-label>
-      <ion-checkbox formControlName="family_worm_infestation"></ion-checkbox>
+      <ion-checkbox formControlName="familiar_verminose"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>DM</ion-label>
-      <ion-checkbox formControlName="family_dm"></ion-checkbox>
+      <ion-checkbox formControlName="familiar_dm"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>HAS</ion-label>
-      <ion-checkbox formControlName="family_sah"></ion-checkbox>
+      <ion-checkbox formControlName="familiar_has"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Câncer</ion-label>
-      <ion-checkbox formControlName="family_cancer"></ion-checkbox>
+      <ion-checkbox formControlName="familiar_cancer"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>TB</ion-label>
-      <ion-checkbox formControlName="family_tuberculosis"></ion-checkbox>
+      <ion-checkbox formControlName="familiar_tb"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>AVC</ion-label>
-      <ion-checkbox formControlName="family_stroke"></ion-checkbox>
+      <ion-checkbox formControlName="familiar_avc"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Alergias</ion-label>
-      <ion-input type="text" formControlName="family_allergy"></ion-input>
+      <ion-input type="text" formControlName="familiar_alergias"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Outros</ion-label>
-      <ion-input type="text" formControlName="family_other"></ion-input>
+      <ion-input type="text" formControlName="familiar_outros"></ion-input>
     </ion-item>
 
     <br><br><br><br>
@@ -222,107 +222,107 @@
 
     <ion-item>
       <ion-label stacked>BEG</ion-label>
-      <ion-checkbox formControlName="exam_general_beg"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_beg"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>REG</ion-label>
-      <ion-checkbox formControlName="exam_general_reg"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_reg"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>MEG</ion-label>
-      <ion-checkbox formControlName="exam_general_meg"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_meg"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Corado</ion-label>
-      <ion-checkbox formControlName="exam_general_corado"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_corado"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Descorado</ion-label>
-      <ion-checkbox formControlName="exam_general_descorado"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_descorado"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Descorado informação (/+4)</ion-label>
-      <ion-input formControlName="exam_general_descorado_qtd"></ion-input>
+      <ion-input formControlName="exame_fisico_geral_descorado_qtd"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Hidratado</ion-label>
-      <ion-checkbox formControlName="exam_general_hidratado"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_hidratado"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Desidratado</ion-label>
-      <ion-checkbox formControlName="exam_general_desidratado"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_desidratado"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Desidratado informação (/+4)</ion-label>
-      <ion-input formControlName="exam_general_desidratado_qtd"></ion-input>
+      <ion-input formControlName="exame_fisico_geral_desidratado_qtd"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Eupneico</ion-label>
-      <ion-checkbox formControlName="exam_general_eupneico"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_eupneico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Dispneico</ion-label>
-      <ion-checkbox formControlName="exam_general_dispneico"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_dispneico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Taquipneico</ion-label>
-      <ion-checkbox formControlName="exam_general_taquipneico"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_taquipneico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Acianótico</ion-label>
-      <ion-checkbox formControlName="exam_general_acianotico"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_acianotico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Cianose periférica</ion-label>
-      <ion-checkbox formControlName="exam_general_cianose_periferica"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_cianose_periferica"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Cianose central</ion-label>
-      <ion-checkbox formControlName="exam_general_cianose_central"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_cianose_central"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Anictérico</ion-label>
-      <ion-checkbox formControlName="exam_general_anicterico"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_anicterico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Ictérico</ion-label>
-      <ion-checkbox formControlName="exam_general_icterico"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_icterico"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Ictérico informação</ion-label>
-      <ion-input formControlName="exam_general_icterico_grau"></ion-input>
+      <ion-input formControlName="exame_fisico_geral_icterico_grau"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Afebril</ion-label>
-      <ion-checkbox formControlName="exam_general_afebril"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_afebril"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Febril</ion-label>
-      <ion-checkbox formControlName="exam_general_febril"></ion-checkbox>
+      <ion-checkbox formControlName="exame_fisico_geral_febril"></ion-checkbox>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Febril informação</ion-label>
-      <ion-input formControlName="exam_general_febril_qtd"></ion-input>
+      <ion-input formControlName="exame_fisico_geral_febril_qtd"></ion-input>
     </ion-item>
 
     <br><br><br><br>
@@ -331,47 +331,47 @@
 
     <ion-item>
       <ion-label stacked>Neuro</ion-label>
-      <ion-input type="text" formControlName="exam_specific_neuro"></ion-input>
+      <ion-input type="text" formControlName="exame_fisico_especifico_neuro"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>AC</ion-label>
-      <ion-input type="text" formControlName="exam_specific_ac"></ion-input>
+      <ion-input type="text" formControlName="exame_fisico_especifico_ac"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>FC (bpm)</ion-label>
-      <ion-input type="text" formControlName="exam_specific_fc"></ion-input>
+      <ion-input type="text" formControlName="exame_fisico_especifico_fc"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>PA ( _ x _ mmHg)</ion-label>
-      <ion-input type="text" formControlName="exam_specific_pa"></ion-input>
+      <ion-input type="text" formControlName="exame_fisico_especifico_pa"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>AP</ion-label>
-      <ion-input type="text" formControlName="exam_specific_ap"></ion-input>
+      <ion-input type="text" formControlName="exame_fisico_especifico_ap"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>FR (bpm)</ion-label>
-      <ion-input type="text" formControlName="exam_specific_fr"></ion-input>
+      <ion-input type="text" formControlName="exame_fisico_especifico_fr"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Abdômen</ion-label>
-      <ion-input type="text" formControlName="exam_specific_abdomen"></ion-input>
+      <ion-input type="text" formControlName="exame_fisico_especifico_abdomen"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Genitourinário</ion-label>
-      <ion-input type="text" formControlName="exam_specific_genitourinario"></ion-input>
+      <ion-input type="text" formControlName="exame_fisico_especifico_genitourinario"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Pele</ion-label>
-      <ion-input type="text" formControlName="exam_specific_pele"></ion-input>
+      <ion-input type="text" formControlName="exame_fisico_especifico_pele"></ion-input>
     </ion-item>
 
     <br><br><br><br>
