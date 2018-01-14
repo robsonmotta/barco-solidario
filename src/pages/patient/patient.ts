@@ -25,24 +25,6 @@ export class PatientPage {
     this.patients = this.provider.getAll();
   }
 
-  ionViewDidLoad() {
-    this.afAuth.authState.subscribe(data => {
-      console.log(data);
-      if (data && data.email && data.uid) {
-        this.toast.create({
-          message: 'Bem vindo, ' + data.email,
-          duration: 3000
-        }).present();
-      }
-      else {
-        this.toast.create({
-          message: 'Ocorreu um erro no login, tente novamente.',
-          duration: 3000
-        }).present();
-      }
-    })
-  }
-
   newPatient() {
     this.navCtrl.push('PatientEditPage');
   }
