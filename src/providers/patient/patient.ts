@@ -11,7 +11,7 @@ export class PatientProvider {
   }
 
   getAll() {
-    this.patientCollectionRef = this.afs.collection(this.PATH);
+    this.patientCollectionRef = this.afs.collection(this.PATH, ref => ref.orderBy('nome'));
     return this.patientCollectionRef.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Patient;

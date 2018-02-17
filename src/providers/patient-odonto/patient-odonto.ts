@@ -11,7 +11,7 @@ export class PatientOdontoProvider {
   }
 
   getAll() {
-    this.patientOdontoCollectionRef = this.afs.collection(this.PATH);
+    this.patientOdontoCollectionRef = this.afs.collection(this.PATH, ref => ref.orderBy('nome'));
     return this.patientOdontoCollectionRef.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as PatientOdonto;
