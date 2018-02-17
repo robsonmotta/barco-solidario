@@ -46,7 +46,7 @@ export class PatientEditPage {
     this.form = this.formBuilder.group({
       key: [this.patient.key],
       responsavel: [this.patient.responsavel, Validators.required],
-      equipe: [this.patient.equipe],
+      equipe: [this.patient.equipe, Validators.required],
       data: [this.patient.data, Validators.required],
 
       nome: [this.patient.nome, Validators.required],

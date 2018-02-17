@@ -42,4 +42,8 @@ export class HomePage {
     this.navCtrl.push('PatientPage');
   }
 
+  patientsOdonto() {
+    this.navCtrl.push('PatientOdontoPage');
+  }
+
 }

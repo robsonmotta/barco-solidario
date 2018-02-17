@@ -1,11 +1,11 @@
 // import { ContactProvider } from './../../providers/contact/contact';
-import { PatientProvider } from './../../providers/patient/patient';
+import { PatientOdontoProvider } from './../../providers/patient-odonto/patient-odonto';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 
 /**
- * Generated class for the PatientPage page.
+ * Generated class for the PatientOdontoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -13,29 +13,29 @@ import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
-  selector: 'page-patient',
-  templateUrl: 'patient.html',
+  selector: 'page-patient-odonto',
+  templateUrl: 'patient-odonto.html',
 })
-export class PatientPage {
-  patients: Observable<any>;
+export class PatientOdontoPage {
+  patientsOdonto: Observable<any>;
 
-  constructor(private toast: ToastController, private provider: PatientProvider,
+  constructor(private toast: ToastController, private provider: PatientOdontoProvider,
     public navCtrl: NavController, public navParams: NavParams) {
-    this.patients = this.provider.getAll();
+    this.patientsOdonto = this.provider.getAll();
   }
 
-  newPatient() {
-    this.navCtrl.push('PatientEditPage');
+  newPatientOdonto() {
+    this.navCtrl.push('PatientOdontoEditPage');
   }
 
-  editPatient(patient: any) {
+  editPatientOdonto(patientOdonto: any) {
     // Maneira 1
-    this.navCtrl.push('PatientEditPage', { patient: patient });
+    this.navCtrl.push('PatientOdontoEditPage', { patientOdonto: patientOdonto });
       // Maneira 2
-    // this.navCtrl.push('PatientEditPage', { key: patient.key });
+    // this.navCtrl.push('PatientOdontoEditPage', { key: patientOdonto.key });
   }
 
-  removePatient(key: string) {
+  removePatientOdonto(key: string) {
     if (key) {
       this.provider.remove(key)
         .then(() => {

@@ -11,6 +11,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
 import { ContactProvider } from '../providers/contact/contact';
 import { PatientProvider } from '../providers/patient/patient';
+import { PatientOdontoProvider } from '../providers/patient-odonto/patient-odonto';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PatientProvider } from '../providers/patient/patient';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuthModule,
     ContactProvider,
-    PatientProvider
+    PatientProvider,
+    PatientOdontoProvider
   ]
 })
 export class AppModule {}

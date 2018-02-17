@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Atendimentos: Médico
+      Atendimentos: Odonto
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,17 +9,17 @@
 <ion-content padding>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let patient of patients | async">
+    <ion-item-sliding *ngFor="let patientOdonto of patientsOdonto | async">
       <ion-item>
-        <h1>{{ patient.nome }}</h1>
-        <p>{{ patient.data }} - {{ patient.responsavel }} ({{ patient.equipe }})</p>
+        <h1>{{ patientOdonto.nome }}</h1>
+        <p>{{ patientOdonto.data }} - {{ patientOdonto.responsavel }} ({{ patientOdonto.equipe }})</p>
       </ion-item>
       <ion-item-options side="left">
-        <button ion-button color="secondary" (click)="editPatient(patient)" style="width: 60px;">
+        <button ion-button color="secondary" (click)="editPatientOdonto(patientOdonto)" style="width: 60px;">
           <ion-icon name="create" style="font-size: 24px;"></ion-icon>
         </button>
         <!--
-        <button ion-button color="danger" (click)="removePatient(patient.key)">
+        <button ion-button color="danger" (click)="removePatient(patientOdonto.key)">
           <ion-icon name="trash"></ion-icon>
         </button>
          -->
@@ -28,7 +28,7 @@
   </ion-list>
 
   <ion-fab bottom right>
-    <button ion-fab (click)="newPatient()">
+    <button ion-fab color="primary" (click)="newPatientOdonto()">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>
