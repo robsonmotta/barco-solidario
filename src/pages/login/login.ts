@@ -105,4 +105,34 @@ export class LoginPage {
     }
   }
 
+  async forgot(user: User) {
+    try {
+        this.afAuth.auth.sendPasswordResetEmail(user.email)
+        .then((res) => {
+          this.toast.create({
+            message: 'Uma mensagem de nova senha foi enviada para seu e-mail.',
+            duration: 3000
+          }).present();
+        }, error => {
+          var error_msg = error.message;
+          if (error.code == "auth/invalid-email") {
+            error_msg = "E-mail inválido"
+          } else if (error.code == "auth/user-not-found") {
+            error_msg = "E-mail não cadastrado."
+          }
+          this.toast.create({
+            message: error_msg,
+            duration: 3000
+          }).present();
+          console.log(error);
+        });
+    } catch (error) {
+        this.toast.create({
+          message: 'Todos os campos devem ser preenchidos corretamente. ' + error.message,
+          duration: 3000
+        }).present();
+        console.error(error);
+    }
+  }
+
 }

@@ -5,7 +5,7 @@ import { PatientOdonto } from "../../models/patient-odonto";
 @Injectable()
 export class PatientOdontoProvider {
   patientOdontoCollectionRef: AngularFirestoreCollection<PatientOdonto>;
-  private PATH = 'patient/';
+  private PATH = 'patientOdonto/';
 
   constructor(private afs: AngularFirestore) {
   }

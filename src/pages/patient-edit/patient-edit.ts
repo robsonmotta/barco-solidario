@@ -121,10 +121,10 @@ export class PatientEditPage {
 
   onSubmit() {
     if (this.form.valid) {
+      this.navCtrl.pop();
       this.provider.save(this.form.value)
         .then(() => {
           this.toast.create({ message: 'Atendimento salvo com sucesso.', duration: 3000 }).present();
-          this.navCtrl.pop();
         })
         .catch((e) => {
           this.toast.create({ message: 'Erro ao salvar o atendimento.', duration: 3000 }).present();
