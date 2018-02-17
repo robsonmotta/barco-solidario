@@ -61,7 +61,7 @@ export class PatientOdontoEditPage {
       tratamento_medico: [this.patientOdonto.tratamento_medico],
       tomando_medicamento: [this.patientOdonto.tomando_medicamento],
       teve_doenca: [this.patientOdonto.teve_doenca],
-      diabetico: [this.patientOdonto.diabetico],
+      doenca_coracao: [this.patientOdonto.doenca_coracao],
       diabetico: [this.patientOdonto.diabetico],
       hipertenso: [this.patientOdonto.hipertenso],
       hemofilico: [this.patientOdonto.hemofilico],
