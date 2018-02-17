@@ -20,6 +20,13 @@ export class LoginPage {
   user = {} as User;
 
   constructor(private afAuth: AngularFireAuth, public toast: ToastController, public navCtrl: NavController, public navParams: NavParams) {
+    if (typeof(Storage) !== "undefined") {
+      var logged_user = localStorage.getItem("email");
+      if (logged_user !== "undefined" && logged_user !== null) {
+        this.user = {email: logged_user, password: ""};
+        this.navCtrl.setRoot('HomePage');
+      }
+    }
   }
 
   async login(user: User) {
@@ -27,6 +34,9 @@ export class LoginPage {
       this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
       .then((user) => {
         if(user.emailVerified) {
+          if (typeof(Storage) !== "undefined") {
+            localStorage.setItem("email", user.email);
+          };
           this.navCtrl.setRoot('HomePage');
         } else {
           user.sendEmailVerification()
