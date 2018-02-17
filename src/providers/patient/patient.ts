@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Patient } from "../../models/patient";
 
 @Injectable()
 export class PatientProvider {
@@ -20,17 +21,18 @@ export class PatientProvider {
     });
   }
 
-  get(key: string) {
-    return this.afs.object(this.PATH + key).snapshotChanges()
-      .map(c => {
-        return { key: c.key, ...c.payload.val() };
-      });
-  }
+//  get(key: string) {
+//    return this.afs.object(this.PATH + key).snapshotChanges()
+//      .map(c => {
+//        return { key: c.key, ...c.payload.val() };
+//      });
+//  }
 
   save(patient: any) {
     return new Promise((resolve, reject) => {
       if (patient.key) {
         this.patientCollectionRef.doc(patient.key).update({
+            key: "",
             responsavel: patient.responsavel,
             equipe: patient.equipe,
             data: patient.data,
@@ -99,6 +101,7 @@ export class PatientProvider {
           .catch((e) => reject(e));
       } else {
         this.patientCollectionRef.add({
+            key: "",
             responsavel: patient.responsavel,
             equipe: patient.equipe,
             data: patient.data,

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { PatientOdonto } from "../../models/patient-odonto";
 
 @Injectable()
 export class PatientOdontoProvider {
@@ -20,17 +21,18 @@ export class PatientOdontoProvider {
     });
   }
 
-  get(key: string) {
-    return this.afs.object(this.PATH + key).snapshotChanges()
-      .map(c => {
-        return { key: c.key, ...c.payload.val() };
-      });
-  }
+//  get(key: string) {
+//    return this.afs.object(this.PATH + key).snapshotChanges()
+//      .map(c => {
+//        return { key: c.key, ...c.payload.val() };
+//      });
+//  }
 
   save(patientOdonto: any) {
     return new Promise((resolve, reject) => {
       if (patientOdonto.key) {
         this.patientOdontoCollectionRef.doc(patientOdonto.key).update({
+            key: "",
             responsavel: patientOdonto.responsavel,
             equipe: patientOdonto.equipe,
             data: patientOdonto.data,
@@ -115,6 +117,7 @@ export class PatientOdontoProvider {
           .catch((e) => reject(e));
       } else {
         this.patientOdontoCollectionRef.add({
+            key: "",
             responsavel: patientOdonto.responsavel,
             equipe: patientOdonto.equipe,
             data: patientOdonto.data,
@@ -200,60 +203,60 @@ export class PatientOdontoProvider {
     })
   }
 
-  save_old(patientOdonto: any) {
-    return new Promise((resolve, reject) => {
-      if (patientOdonto.key) {
-        this.db.list(this.PATH)
-          .update(patientOdonto.key, {
-            responsavel: patientOdonto.responsavel,
-            equipe: patientOdonto.equipe,
-            data: patientOdonto.data,
-            nome: patientOdonto.nome,
-            tratamento: patientOdonto.tratamento,
-            numero_ficha: patientOdonto.numero_ficha,
-            idade: patientOdonto.idade,
-            genero: patientOdonto.genero,
-            etinia: patientOdonto.etinia,
-            atendimento: patientOdonto.atendimento,
-            encaminhamento: patientOdonto.encaminhamento,
-            comunidade_escola: patientOdonto.comunidade_escola,
-            sala: patientOdonto.sala,
-            periodo: patientOdonto.periodo,
-            autorizacao: patientOdonto.autorizacao,
-            superior_18: patientOdonto.superior_18,
-            superior_17: patientOdonto.superior_17,
-            inferior_18: patientOdonto.inferior_18,
-            inferior_17: patientOdonto.inferior_17,
-          })
-          .then(() => resolve())
-          .catch((e) => reject(e));
-      } else {
-        this.db.list(this.PATH)
-          .push({
-            responsavel: patientOdonto.responsavel,
-            equipe: patientOdonto.equipe,
-            data: patientOdonto.data,
-            nome: patientOdonto.nome,
-            tratamento: patientOdonto.tratamento,
-            numero_ficha: patientOdonto.numero_ficha,
-            idade: patientOdonto.idade,
-            genero: patientOdonto.genero,
-            etinia: patientOdonto.etinia,
-            atendimento: patientOdonto.atendimento,
-            encaminhamento: patientOdonto.encaminhamento,
-            comunidade_escola: patientOdonto.comunidade_escola,
-            sala: patientOdonto.sala,
-            periodo: patientOdonto.periodo,
-            autorizacao: patientOdonto.autorizacao,
-            superior_18: patientOdonto.superior_18,
-            superior_17: patientOdonto.superior_17,
-            inferior_18: patientOdonto.inferior_18,
-            inferior_17: patientOdonto.inferior_17,
-          })
-          .then(() => resolve());
-      }
-    })
-  }
+//  save_old(patientOdonto: any) {
+//    return new Promise((resolve, reject) => {
+//      if (patientOdonto.key) {
+//        this.db.list(this.PATH)
+//          .update(patientOdonto.key, {
+//            responsavel: patientOdonto.responsavel,
+//            equipe: patientOdonto.equipe,
+//            data: patientOdonto.data,
+//            nome: patientOdonto.nome,
+//            tratamento: patientOdonto.tratamento,
+//            numero_ficha: patientOdonto.numero_ficha,
+//            idade: patientOdonto.idade,
+//            genero: patientOdonto.genero,
+//            etinia: patientOdonto.etinia,
+//            atendimento: patientOdonto.atendimento,
+//            encaminhamento: patientOdonto.encaminhamento,
+//            comunidade_escola: patientOdonto.comunidade_escola,
+//            sala: patientOdonto.sala,
+//            periodo: patientOdonto.periodo,
+//            autorizacao: patientOdonto.autorizacao,
+//            superior_18: patientOdonto.superior_18,
+//            superior_17: patientOdonto.superior_17,
+//            inferior_18: patientOdonto.inferior_18,
+//            inferior_17: patientOdonto.inferior_17,
+//          })
+//          .then(() => resolve())
+//          .catch((e) => reject(e));
+//      } else {
+//        this.db.list(this.PATH)
+//          .push({
+//            responsavel: patientOdonto.responsavel,
+//            equipe: patientOdonto.equipe,
+//            data: patientOdonto.data,
+//            nome: patientOdonto.nome,
+//            tratamento: patientOdonto.tratamento,
+//            numero_ficha: patientOdonto.numero_ficha,
+//            idade: patientOdonto.idade,
+//            genero: patientOdonto.genero,
+//            etinia: patientOdonto.etinia,
+//            atendimento: patientOdonto.atendimento,
+//            encaminhamento: patientOdonto.encaminhamento,
+//            comunidade_escola: patientOdonto.comunidade_escola,
+//            sala: patientOdonto.sala,
+//            periodo: patientOdonto.periodo,
+//            autorizacao: patientOdonto.autorizacao,
+//            superior_18: patientOdonto.superior_18,
+//            superior_17: patientOdonto.superior_17,
+//            inferior_18: patientOdonto.inferior_18,
+//            inferior_17: patientOdonto.inferior_17,
+//          })
+//          .then(() => resolve());
+//      }
+//    })
+//  }
 
   remove(key: string) {
     return this.patientOdontoCollectionRef.doc(key).delete();
