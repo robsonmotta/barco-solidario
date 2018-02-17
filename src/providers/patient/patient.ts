@@ -1,23 +1,27 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 
 @Injectable()
 export class PatientProvider {
+  patientCollectionRef: AngularFirestoreCollection<Patient>;
   private PATH = 'patient/';
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private afs: AngularFirestore) {
   }
 
   getAll() {
-    return this.db.list(this.PATH, ref => ref.orderByChild('nome'))
-      .snapshotChanges()
-      .map(changes => {
-        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
-      })
+    this.patientCollectionRef = this.afs.collection(this.PATH);
+    return this.patientCollectionRef.snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as Patient;
+        data.key = a.payload.doc.id;
+        return data;
+      });
+    });
   }
 
   get(key: string) {
-    return this.db.object(this.PATH + key).snapshotChanges()
+    return this.afs.object(this.PATH + key).snapshotChanges()
       .map(c => {
         return { key: c.key, ...c.payload.val() };
       });
@@ -26,8 +30,7 @@ export class PatientProvider {
   save(patient: any) {
     return new Promise((resolve, reject) => {
       if (patient.key) {
-        this.db.list(this.PATH)
-          .update(patient.key, {
+        this.patientCollectionRef.doc(patient.key).update({
             responsavel: patient.responsavel,
             equipe: patient.equipe,
             data: patient.data,
@@ -95,8 +98,7 @@ export class PatientProvider {
           .then(() => resolve())
           .catch((e) => reject(e));
       } else {
-        this.db.list(this.PATH)
-          .push({
+        this.patientCollectionRef.add({
             responsavel: patient.responsavel,
             equipe: patient.equipe,
             data: patient.data,
@@ -167,6 +169,6 @@ export class PatientProvider {
   }
 
   remove(key: string) {
-    return this.db.list(this.PATH).remove(key);
+    return this.patientCollectionRef.doc(key).delete();
   }
 }

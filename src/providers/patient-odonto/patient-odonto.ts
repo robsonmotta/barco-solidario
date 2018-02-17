@@ -1,23 +1,27 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 
 @Injectable()
 export class PatientOdontoProvider {
-  private PATH = 'patient-odonto/';
+  patientOdontoCollectionRef: AngularFirestoreCollection<PatientOdonto>;
+  private PATH = 'patient/';
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private afs: AngularFirestore) {
   }
 
   getAll() {
-    return this.db.list(this.PATH, ref => ref.orderByChild('nome'))
-      .snapshotChanges()
-      .map(changes => {
-        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
-      })
+    this.patientOdontoCollectionRef = this.afs.collection(this.PATH);
+    return this.patientOdontoCollectionRef.snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as PatientOdonto;
+        data.key = a.payload.doc.id;
+        return data;
+      });
+    });
   }
 
   get(key: string) {
-    return this.db.object(this.PATH + key).snapshotChanges()
+    return this.afs.object(this.PATH + key).snapshotChanges()
       .map(c => {
         return { key: c.key, ...c.payload.val() };
       });
@@ -26,8 +30,7 @@ export class PatientOdontoProvider {
   save(patientOdonto: any) {
     return new Promise((resolve, reject) => {
       if (patientOdonto.key) {
-        this.db.list(this.PATH)
-          .update(patientOdonto.key, {
+        this.patientOdontoCollectionRef.doc(patientOdonto.key).update({
             responsavel: patientOdonto.responsavel,
             equipe: patientOdonto.equipe,
             data: patientOdonto.data,
@@ -111,8 +114,7 @@ export class PatientOdontoProvider {
           .then(() => resolve())
           .catch((e) => reject(e));
       } else {
-        this.db.list(this.PATH)
-          .push({
+        this.patientOdontoCollectionRef.add({
             responsavel: patientOdonto.responsavel,
             equipe: patientOdonto.equipe,
             data: patientOdonto.data,
@@ -254,6 +256,6 @@ export class PatientOdontoProvider {
   }
 
   remove(key: string) {
-    return this.db.list(this.PATH).remove(key);
+    return this.patientOdontoCollectionRef.doc(key).delete();
   }
 }

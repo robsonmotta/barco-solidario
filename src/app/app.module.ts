@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { MyApp } from './app.component';
 import { ContactProvider } from '../providers/contact/contact';
@@ -29,7 +30,8 @@ import { PatientOdontoProvider } from '../providers/patient-odonto/patient-odont
       messagingSenderId: "813814174017"
     }),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule.enablePersistence()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
