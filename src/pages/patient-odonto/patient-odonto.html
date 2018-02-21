@@ -10,7 +10,7 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let patientOdonto of patientsOdonto | async">
-      <ion-item>
+      <ion-item (click)="viewPatientOdonto(patientOdonto)">
         <h1>{{ patientOdonto.nome }}</h1>
         <p>{{ patientOdonto.data }} - {{ patientOdonto.responsavel }} ({{ patientOdonto.equipe }})</p>
       </ion-item>

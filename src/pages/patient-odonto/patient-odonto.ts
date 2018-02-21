@@ -28,10 +28,11 @@ export class PatientOdontoPage {
   }
 
   editPatientOdonto(patientOdonto: any) {
-    // Maneira 1
     this.navCtrl.push('PatientOdontoEditPage', { patientOdonto: patientOdonto });
-      // Maneira 2
-    // this.navCtrl.push('PatientOdontoEditPage', { key: patientOdonto.key });
+  }
+
+  viewPatientOdonto(patientOdonto: any) {
+    this.navCtrl.push('PatientOdontoViewPage', { patientOdonto: patientOdonto });
   }
 
   removePatientOdonto(key: string) {

@@ -10,7 +10,7 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let patient of patients | async">
-      <ion-item>
+      <ion-item (click)="viewPatient(patient)">>
         <h1>{{ patient.nome }}</h1>
         <p>{{ patient.data }} - {{ patient.responsavel }} ({{ patient.equipe }})</p>
       </ion-item>
@@ -18,9 +18,11 @@
         <button ion-button color="secondary" (click)="editPatient(patient)" style="width: 60px;">
           <ion-icon name="create" style="font-size: 24px;"></ion-icon>
         </button>
+        <!--
         <button ion-button color="danger" (click)="removePatient(patient.key)" style="width: 60px;">
           <ion-icon name="trash"></ion-icon>
         </button>
+         -->
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>

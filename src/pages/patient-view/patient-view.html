@@ -1,0 +1,356 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Atendimento: Médico</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    Data:
+    <br>
+    {{ data }}
+    <br><br>
+
+    Responsável:
+    <br>
+    {{ responsavel }}
+    <br><br>
+
+    Equipe:
+    <br>
+    {{ equipe }}
+    <br><br>
+
+    Nome:
+    <br>
+    {{ nome }}
+    <br><br>
+
+    Idade:
+    <br>
+    {{ idade }}
+    <br><br>
+
+    Gênero:
+    <br>
+    {{ genero }}
+    <br><br>
+
+    Cor:
+    <br>
+    {{ cor }}
+    <br><br>
+
+    Profissão:
+    <br>
+    {{ profissao }}
+    <br><br>
+
+    Natural de:
+    <br>
+    {{ natural_de }}
+    <br><br>
+
+    Procedente de:
+    <br>
+    {{ procedente_de }}
+    <br><br>
+
+    <br><br>
+
+    Queixa e duração
+    <br>
+    {{ queixa }}
+    <br><br>
+
+    <br><br>
+
+    ISDA geral e específico:
+    <br>
+    {{ isda }}
+    <br><br>
+
+    <br><br>
+    Antecedentes
+    <br><br>
+
+    <br><br>
+    1. Pessoal
+    <br><br>
+
+    Verminose:
+    <br>
+    {{ pessoal_verminose }}
+    <br><br>
+
+    DM:
+    <br>
+    {{ pessoal_dm }}
+    <br><br>
+
+    HAS:
+    <br>
+    {{ pessoal_has }}
+    <br><br>
+
+    Câncer:
+    <br>
+    {{ pessoal_cancer }}
+    <br><br>
+
+    TB:
+    <br>
+    {{ pessoal_tb }}
+    <br><br>
+
+    AVC:
+    <br>
+    {{ pessoal_avc }}
+    <br><br>
+
+    Álcool:
+    <br>
+    {{ pessoal_alcool }}
+    <br><br>
+
+    Cigarro:
+    <br>
+    {{ pessoal_cigarro }}
+    <br><br>
+
+    Drogas:
+    <br>
+    {{ pessoal_drogas }}
+    <br><br>
+
+    Alergias:
+    <br>
+    {{ pessoal_alergias }}
+    <br><br>
+
+    Outros:
+    <br>
+    {{ pessoal_outros }}
+    <br><br>
+
+    Cirurgias prévias:
+    <br>
+    {{ pessoal_cirurgias_previas }}
+    <br><br>
+
+    <br><br>
+    2. Familiar
+    <br><br>
+
+    Verminose:
+    <br>
+    {{ familiar_verminose }}
+    <br><br>
+
+    DM:
+    <br>
+    {{ familiar_dm }}
+    <br><br>
+
+    HAS:
+    <br>
+    {{ familiar_has }}
+    <br><br>
+
+    Câncer:
+    <br>
+    {{ familiar_cancer }}
+    <br><br>
+
+    TB:
+    <br>
+    {{ familiar_tb }}
+    <br><br>
+
+    AVC:
+    <br>
+    {{ familiar_avc }}
+    <br><br>
+
+    Alergias:
+    <br>
+    {{ familiar_alergias }}
+    <br><br>
+
+    Outros:
+    <br>
+    {{ familiar_outros }}
+    <br><br>
+
+    <br><br>
+    Exame físico
+    <br><br>
+
+    <br><br>
+    Geral
+    <br><br>
+
+    BEG:
+    <br>
+    {{ exame_fisico_geral_beg }}
+    <br><br>
+
+    REG:
+    <br>
+    {{ exame_fisico_geral_reg }}
+    <br><br>
+
+    MEG:
+    <br>
+    {{ exame_fisico_geral_meg }}
+    <br><br>
+
+    Corado:
+    <br>
+    {{ exame_fisico_geral_corado }}
+    <br><br>
+
+    Descorado:
+    <br>
+    {{ exame_fisico_geral_descorado }}
+    <br><br>
+
+    Descorado informação (/+4):
+    <br>
+    {{ exame_fisico_geral_descorado_qtd }}
+    <br><br>
+
+    Hidratado:
+    <br>
+    {{ exame_fisico_geral_hidratado }}
+    <br><br>
+
+    Desidratado:
+    <br>
+    {{ exame_fisico_geral_desidratado }}
+    <br><br>
+
+    Desidratado informação (/+4):
+    <br>
+    {{ exame_fisico_geral_desidratado_qtd }}
+    <br><br>
+
+    Eupneico:
+    <br>
+    {{ exame_fisico_geral_eupneico }}
+    <br><br>
+
+    Dispneico:
+    <br>
+    {{ exame_fisico_geral_dispneico }}
+    <br><br>
+
+    Taquipneico:
+    <br>
+    {{ exame_fisico_geral_taquipneico }}
+    <br><br>
+
+    Acianótico:
+    <br>
+    {{ exame_fisico_geral_acianotico }}
+    <br><br>
+
+    Cianose periférica:
+    <br>
+    {{ exame_fisico_geral_cianose_periferica }}
+    <br><br>
+
+    Cianose central:
+    <br>
+    {{ exame_fisico_geral_cianose_central }}
+    <br><br>
+
+    Anictérico:
+    <br>
+    {{ exame_fisico_geral_anicterico }}
+    <br><br>
+
+    Ictérico:
+    <br>
+    {{ exame_fisico_geral_icterico }}
+    <br><br>
+
+    Ictérico informação
+    <br>
+    {{ exame_fisico_geral_icterico_grau }}
+    <br><br>
+
+    Afebril:
+    <br>
+    {{ exame_fisico_geral_afebril }}
+    <br><br>
+
+    Febril:
+    <br>
+    {{ exame_fisico_geral_febril }}
+    <br><br>
+
+    Febril informação
+    <br>
+    {{ exame_fisico_geral_febril_qtd }}
+    <br><br>
+
+    <br><br>
+    Específico
+    <br><br>
+
+    Neuro:
+    <br>
+    {{ exame_fisico_especifico_neuro }}
+    <br><br>
+
+    AC:
+    <br>
+    {{ exame_fisico_especifico_ac }}
+    <br><br>
+
+    FC (bpm):
+    <br>
+    {{ exame_fisico_especifico_fc }}
+    <br><br>
+
+    PA (_ x _ mmHg):
+    <br>
+    {{ exame_fisico_especifico_pa }}
+    <br><br>
+
+    AP:
+    <br>
+    {{ exame_fisico_especifico_ap }}
+    <br><br>
+
+    FR (bpm):
+    <br>
+    {{ exame_fisico_especifico_fr }}
+    <br><br>
+
+    Abdômen:
+    <br>
+    {{ exame_fisico_especifico_abdomen }}
+    <br><br>
+
+    Genitourinário:
+    <br>
+    {{ exame_fisico_especifico_genitourinario }}
+    <br><br>
+
+    Pele:
+    <br>
+    {{ exame_fisico_especifico_pele }}
+    <br><br>
+
+    <br><br>
+
+    Conduta:
+    <br>
+    {{ conduta }}
+    <br><br>
+
+    <br><br>
+
+</ion-content>

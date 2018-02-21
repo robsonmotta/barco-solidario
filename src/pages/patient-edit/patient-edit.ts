@@ -18,22 +18,8 @@ export class PatientEditPage {
     private formBuilder: FormBuilder, private provider: PatientProvider,
     private toast: ToastController) {
 
-    // maneira 1
     this.patient = this.navParams.data.patient || { };
     this.createForm();
-
-    // // maneira 2
-    // this.patient = { };
-    // this.createForm();
-
-    // if (this.navParams.data.key) {
-    //   const subscribe = this.provider.get(this.navParams.data.key).subscribe((c: any) => {
-    //     subscribe.unsubscribe();
-
-    //     this.patient = c;
-    //     this.createForm();
-    //   })
-    // }
 
     this.setupPageTitle();
   }
