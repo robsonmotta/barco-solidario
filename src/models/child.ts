@@ -1,4 +1,4 @@
-export interface Patient {
+export interface Child {
     key: string;
     responsavel: string;
     equipe: string;
