@@ -18,22 +18,8 @@ export class PatientOdontoEditPage {
     private formBuilder: FormBuilder, private provider: PatientOdontoProvider,
     private toast: ToastController) {
 
-    // maneira 1
     this.patientOdonto = this.navParams.data.patientOdonto || { };
     this.createForm();
-
-    // // maneira 2
-    // this.patientOdonto = { };
-    // this.createForm();
-
-    // if (this.navParams.data.key) {
-    //   const subscribe = this.provider.get(this.navParams.data.key).subscribe((c: any) => {
-    //     subscribe.unsubscribe();
-
-    //     this.patientOdonto = c;
-    //     this.createForm();
-    //   })
-    // }
 
     this.setupPageTitle();
   }
@@ -129,6 +115,7 @@ export class PatientOdontoEditPage {
       situacao_74: [this.patientOdonto.situacao_74],
       situacao_75: [this.patientOdonto.situacao_75],
 
+      tratamento: [this.patientOdonto.tratamento],
     });
   }
 

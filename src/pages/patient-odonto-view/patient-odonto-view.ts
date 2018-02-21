@@ -88,6 +88,7 @@ export class PatientOdontoViewPage {
   esta_gravida: string;
   sofre_epilepsia: string;
   declaracao: string;
+  tratamento: string;
 
   constructor(
     public navCtrl: NavController, public navParams: NavParams) {
@@ -171,6 +172,7 @@ export class PatientOdontoViewPage {
     this.esta_gravida = this.patientOdonto.esta_gravida;
     this.sofre_epilepsia = this.patientOdonto.sofre_epilepsia;
     this.declaracao = this.patientOdonto.declaracao;
+    this.tratamento = this.patientOdonto.tratamento;
 
   }
 
