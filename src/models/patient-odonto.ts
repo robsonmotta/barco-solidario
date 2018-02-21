@@ -79,4 +79,5 @@ export interface PatientOdonto {
     situacao_73: string;
     situacao_74: string;
     situacao_75: string;
+    tratamento: string;
 }
