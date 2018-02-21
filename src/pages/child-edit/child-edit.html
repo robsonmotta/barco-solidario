@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ title }}: Criança</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form">
+
+    <ion-item>
+      <ion-label stacked>Data*</ion-label>
+      <ion-input type="date" formControlName="data"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.data.valid && (form.controls.data.dirty || form.controls.data.touched)" color="danger">
+      <div [hidden]="!form.controls.data.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Responsável*</ion-label>
+      <ion-input type="text" formControlName="responsavel"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.responsavel.valid && (form.controls.responsavel.dirty || form.controls.responsavel.touched)" color="danger">
+      <div [hidden]="!form.controls.responsavel.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Equipe*</ion-label>
+      <ion-input type="text" formControlName="equipe"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.equipe.valid && (form.controls.equipe.dirty || form.controls.equipe.touched)" color="danger">
+      <div [hidden]="!form.controls.equipe.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <br><br>
+    <ion-title>Identificação</ion-title>
+    <br><br>
+
+    <ion-item>
+      <ion-label stacked>Nome*</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.nome.valid && (form.controls.nome.dirty || form.controls.nome.touched)" color="danger">
+      <div [hidden]="!form.controls.nome.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Idade</ion-label>
+      <ion-input type="text" formControlName="idade"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Sexo</ion-label>
+    </ion-item>
+    <ion-list radio-group formControlName="genero">
+      <ion-item>
+        <ion-label>Feminino</ion-label>
+        <ion-radio value="feminino"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio value="masculino"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-label stacked>Natural de</ion-label>
+      <ion-input type="text" formControlName="natural_de"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Procedente de</ion-label>
+      <ion-input type="text" formControlName="procedente_de"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Escola</ion-label>
+      <ion-input type="text" formControlName="escola"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Cor preferida</ion-label>
+      <ion-input type="text" formControlName="cor_preferida"></ion-input>
+    </ion-item>
+
+    <br><br>
+
+
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">Salvar</button>
+    </div>
+  </form>
+</ion-content>

@@ -46,4 +46,8 @@ export class HomePage {
     this.navCtrl.push('PatientOdontoPage');
   }
 
+  children() {
+    this.navCtrl.push('ChildPage');
+  }
+
 }

@@ -13,6 +13,7 @@ import { MyApp } from './app.component';
 import { ContactProvider } from '../providers/contact/contact';
 import { PatientProvider } from '../providers/patient/patient';
 import { PatientOdontoProvider } from '../providers/patient-odonto/patient-odonto';
+import { ChildProvider } from '../providers/child/child';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PatientOdontoProvider } from '../providers/patient-odonto/patient-odont
     AngularFireAuthModule,
     ContactProvider,
     PatientProvider,
-    PatientOdontoProvider
+    PatientOdontoProvider,
+    ChildProvider
   ]
 })
 export class AppModule {}
